@@ -24,11 +24,7 @@
                     <div class="login-textfield-div">
                         <input class="login-input" type="password" placeholder="Password"></input>
                     </div>
-                    <div class="login-suggest-text-div">
-                        <p class="login-suggest-text">
-                            กรุณาเข้าใช้งานด้วยรหัสผ่านของท่าน
-                        </p>
-                    </div>
+                    </br>
                     <button class="login-button" type="submit">
                         เข้าสู่ระบบ
                     </button>

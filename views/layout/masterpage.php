@@ -6,32 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>AssetsMangements</title>
 </head>
 
 <body>
-    <div class="header">
-        <div class="logoimg">
-            <a href="../layout/masterpage.php"><img src="../../assets/image/logo.png" alt="" width="70" height="70"></a>
+    <div class="wrapper">
+        <div class="sidebar">
+            <a href="../layout/masterpage.php"><img src="../../assets/image/logo-footer.png" alt="logo"></a>
+            <ul>
+                <li><a href="#"><i class="bi bi-graph-up"></i> รานงานครุภัณฑ์</a></li>
+                <li><a href="../detail-assets/detail-assets.php"><i class="bi bi-tv"></i> จัดการครุภัณฑ์</a></li>
+                <li><a href="#"><i class="bi bi-arrow-left-right"></i> ยืม - คืน ครุภัณฑ์</a></li>
+                <li><a href="#"><i class="bi bi-cart3"></i> จำหน่ายครุภัณฑ์</a></li>
+                <li><a href="#"><i class="bi bi-gear"></i> แจ้งซ่อมครุภัณฑ์</a></li>
+                <li><a href="../../views/user-management/user-management.php"><i class="bi bi-people-fill"></i> จัดการผู้ใช้งาน</a></li>
+            </ul>
         </div>
-    </div>
-    <div class="nav">
-        <ul>
-            <li>รายงานครุภัณฑ์</li>
-            <li>จัดการครุภัณฑ์</li>
-            <li>จำหน่ายครุภัณฑ์</li>
-            <li>แจ้งซ่อมครุภัณฑ์</li>
-            <li>ยืม - คืน ครุภัณฑ์</li>
-            <li><a href="../user-management/user-management.php"> จัดการผู้ใช้งาน</a></li>
-        </ul>
-    </div>
-    <div class="container">
-        <?php if (empty($content)) {
-            echo "<h1>Hello World</h1>";
-        } else {
-            echo $content;
-        } ?>
+        <div class="main_content">
+            <div class="header">
+                <p class="username">USERNAME</p>
+            </div>
+            <div class="info">
+            </div>
+        </div>
     </div>
 </body>
 
