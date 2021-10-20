@@ -14,3 +14,6 @@
     height: 100%;
     color: #F2F0F0;
 }
+.logoimg{
+    background-image: url("../image/logo.png");
+}
