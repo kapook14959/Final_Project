@@ -1,0 +1,16 @@
+.header{
+    top: 0;
+    left: 0;
+    background-color: #F77100;
+    width: 100%;
+    height: 70px;
+    
+}
+.nav{
+    top: 0;
+    left: 0;
+    background-color: #292B2C;
+    width: 250px;
+    height: 100%;
+    color: #F2F0F0;
+}
