@@ -31,8 +31,8 @@
   touch-action: manipulation;
   width: auto;
   will-change: transform, opacity;
-  z-index: 0;
   left: 79%;
+  margin: 0 0 10px 0;
 }
 
 .button-17:hover {
