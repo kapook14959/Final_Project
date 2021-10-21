@@ -98,5 +98,13 @@ body {
 }
 
 .container {
-  margin: 10px 0 0 0;
+  margin: 15px 0 15px 0;
+}
+
+.btn-back{
+  margin-left: 35em;
+}
+
+.btn-save{
+  margin-left: 0.5em;
 }

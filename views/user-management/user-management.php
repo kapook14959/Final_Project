@@ -2,7 +2,7 @@
 include('../layout/masterpage.php');
 ?>
 <div class="container">
-    <button class="button-17" role="button">Create User</button>
+    <button class="button-17" role="button" onclick="CreateUser(true);">Create User</button>
     <table>
         <tr>
             <th>Firstname</th>

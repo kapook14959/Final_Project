@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="../../assets/css/user-management.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="../../assets/js/function.js"></script>
     <title>AssetsMangements</title>
 </head>
 
 <body>
     <div class="wrapper">
         <div class="sidebar">
-            <a href="../layout/masterpage.php"><img src="../../assets/image/logo-footer.png" alt="logo"></a>
+            <a href="../layout/masterpage.php"><img src="../../assets/images/logo-footer.png" alt="logo"></a>
             <ul>
                 <li><a href="#"><i class="bi bi-graph-up"></i> รายการครุภัณฑ์</a></li>
                 <li><a href="../detail-assets/detail-assets.php"><i class="bi bi-tv"></i> จัดการครุภัณฑ์</a></li>
