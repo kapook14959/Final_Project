@@ -14,7 +14,7 @@
         <div class="login-middle">
             <div class="login-inner">
                 <div>
-                    <img class="login-image" src="../../assets/image/logo.png" width="210" height="210" alt="logo" />
+                    <img class="login-image" src="../../assets/images/logo.png" width="210" height="210" alt="logo" />
                 </div>
                 <div class="login-input-form">
                     <div class="login-title-div">

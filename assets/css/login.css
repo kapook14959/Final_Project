@@ -5,8 +5,9 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-image: url("../image/background.jpg");
+  background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
+  background-size: 1920px 1080px;
 }
 
 .login-middle {
