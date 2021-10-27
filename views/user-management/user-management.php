@@ -1,28 +1,28 @@
 <?php
 include('../layout/masterpage.php');
 ?>
-<div class="container">
-    <button class="button-17" role="button" onclick="CreateUser(true);">Create User</button>
-    <table>
+<style>
+    <?php
+    include('../../assets/css/user-management.css');
+    ?>
+</style>
+<div class="container-fluid">
+    <a class="button-17" onclick="CreateUser(true);">เพิ่มเจ้าหน้าที่</a>
+    <table style="margin-left: 40%;">
         <tr>
-            <th>Firstname</th>
-            <th>Lastname</th>
-            <th>Role</th>
+            <th>รหัสเจ้าหน้าที่</th>
+            <th>ชื่อผู้ใช้</th>
+            <th>ชื่อ</th>
+            <th>นามสกุล</th>
+            <th>ภาควิชา</th>
+            <th>เบอร์โทร</th>
+            <th>อีเมล์</th>
+            <th>สิทธิ์การใช้งาน</th>
+            <th>แก้ไขข้อมูล</th>
         </tr>
-        <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-            <td>Admin</td>
-        </tr>
-        <tr>
-            <td>Lois</td>
-            <td>Griffin</td>
-            <td>Executive</td>
-        </tr>
-        <tr>
-            <td>Joe</td>
-            <td>Swanson</td>
-            <td>Staff</td>
-        </tr>
+        <?php
+        include '../../assets/db/connect.php';
+        ?>
     </table>
+
 </div>

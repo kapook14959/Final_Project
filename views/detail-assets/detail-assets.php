@@ -1,27 +1,35 @@
 <?php
 include('../layout/masterpage.php');
 ?>
-<div class="container">
+<style>
+    <?php
+    include('../../assets/css/detail-assets.css');
+    ?>
+</style>
+<div class="container-fluid">
+    <a class="button-17" onclick="CreateAssets(true);">เพิ่มครุภัณฑ์</a>
     <table>
         <tr>
-            <th>AssetName</th>
-            <th>Quantity</th>
-            <th>Image</th>
-        </tr>
-        <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-            <td>Admin</td>
-        </tr>
-        <tr>
-            <td>Lois</td>
-            <td>Griffin</td>
-            <td>Executive</td>
-        </tr>
-        <tr>
-            <td>Joe</td>
-            <td>Swanson</td>
-            <td>Staff</td>
+            <th>รหัสครุภัณฑ์</th>
+            <th>ภาควิชา</th>
+            <th>แหล่งที่มาของเงิน</th>
+            <th>ปีงบประมาณ</th>
+            <th>เลขครุภัณฑ์</th>
+            <th>ชื่อครุภัณฑ์</th>
+            <th>รายละเอียด</th>
+            <th>หน่วยนับ</th>
+            <th>วันที่รับเข้าคลัง</th>
+            <th>มูลค่าครุภัณฑ์</th>
+            <th>ผู้นำเข้าคลัง</th>
+            <th>เลขที่ใบส่งของ</th>
+            <th>ผู้ขาย</th>
+            <th>หมายเลขซีเรียล</th>
+            <th>รหัสสินทรัพย์</th>
+            <th>ประเภท</th>
+            <th>ที่อยู่</th>
+            <th>QR-CODE</th>
+            <th>รูปภาพ</th>
+            <th>แก้ไข</th>
         </tr>
     </table>
 </div>
