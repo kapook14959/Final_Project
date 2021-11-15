@@ -21,7 +21,7 @@ include('../layout/masterpage.php');
             <th>แก้ไขข้อมูล</th>
         </tr>
         <?php
-        include '../../assets/db/connect.php';
+        include '../../assets/db/showuser.php';
         ?>
     </table>
 
