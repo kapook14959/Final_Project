@@ -9,15 +9,13 @@ $conn = new mysqli($host, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT assets_types_name FROM `assets_types`";
+$sql = "SELECT * FROM `assets_types`";
 $result = mysqli_query($conn, $sql);
 
 if ($result = mysqli_query($conn, $sql)) {
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_array($result)) {
-            echo "<tr>";
-            echo "<td>" . $row['assets_types_name'] . "</td>";
-            echo "</tr>";
+            echo "<option value=".$row['id'].">" . $row['assets_types_name'] . "</option>";
         }
         // Free result set
         mysqli_free_result($result);

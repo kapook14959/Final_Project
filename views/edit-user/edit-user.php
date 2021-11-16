@@ -29,27 +29,27 @@ if(isset($_GET['id'])){
     <form action="../../assets/db/updateuser.php" method="post">
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
-            <input type="hidden" name="id" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $id?>">
-            <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $data['username']?>" readonly>
+            <input type="hidden" name="id" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $id;?>">
+            <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $data['username'];?>" readonly>
         </div>
         <div class="col-md-6">
-            <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" value="<?php echo $data['password']?>">
-        </div>
-    </div>
-    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
-        <div class="col-md-6">
-            <input type="text" name="fisrtname" class="form-control" placeholder="ชื่อ" value="<?php echo $data['staff_firstname']?>">
-        </div>
-        <div class="col-md-6">
-            <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" value="<?php echo $data['staff_lastname']?>">
+            <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" value="<?php echo $data['password'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
-            <input type="text" name="telephone" class="form-control" placeholder="เบอร์มือถือ" value="<?php echo $data['telephone']?>">
+            <input type="text" name="fisrtname" class="form-control" placeholder="ชื่อ" value="<?php echo $data['staff_firstname'];?>">
         </div>
         <div class="col-md-6">
-            <input type="email" name="email" class="form-control" placeholder="E-Mail" value="<?php echo $data['email']?>">
+            <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" value="<?php echo $data['staff_lastname'];?>">
+        </div>
+    </div>
+    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col-md-6">
+            <input type="text" name="telephone" class="form-control" placeholder="เบอร์มือถือ" value="<?php echo $data['telephone'];?>">
+        </div>
+        <div class="col-md-6">
+            <input type="email" name="email" class="form-control" placeholder="E-Mail" value="<?php echo $data['email'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
@@ -102,18 +102,18 @@ if(isset($_GET['id'])){
                 echo "<option value='".$dep_name[1]['id']."' >".$dep_name[1]['department_name']."</option>";
                 echo "<option value='".$dep_name[2]['id']."' >".$dep_name[2]['department_name']."</option>";
                }
-               
+               mysqli_close($conn);
                ?>
             </select>
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 38rem; width:50%;">
-    <div class="col">
-    <input type="submit" class="btn btn-success" name="submit" value="บันทึก">
-    </div>
-    <div class="col">
-    <input type="reset" class="btn btn-danger" value="reset">
-    </div>
+        <div class="col" style="margin-left: 42%;">
+            <input type="submit" class="btn btn-success" name="submit" value="บันทึก">
+        </div>
+        <div class="col" style="margin-right: 37%;">
+            <input type="reset" class="btn btn-danger" value="reset">
+        </div>
     </div>
     </form>
 </div>

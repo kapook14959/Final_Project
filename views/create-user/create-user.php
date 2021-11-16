@@ -46,10 +46,10 @@ include('../layout/masterpage.php');
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 38rem; width:50%;">
-    <div class="col">
+    <div class="col" style="margin-left: 42%;">
     <input type="submit" class="btn btn-success" name="submit" value="บันทึก">
     </div>
-    <div class="col">
+    <div class="col" style="margin-right: 37%;">
     <input type="reset" class="btn btn-danger" value="reset">
     </div>
     </div>

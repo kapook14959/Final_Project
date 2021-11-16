@@ -16,3 +16,9 @@ function CreateAssets(status) {
         window.location.href = "../../views/create-assets/create-assets.php";
     }
 }
+function EditAssets(status) {
+    console.log("Click Edit Assets");
+    if (status) {
+        window.location.href = "../../views/edit-assets/edit-assets.php?id="+ status;
+    }
+}
