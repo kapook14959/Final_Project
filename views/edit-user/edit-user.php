@@ -1,39 +1,119 @@
 <?php
 include('../layout/masterpage.php');
+
+$host = "localhost";
+$port = "3306";
+$username = "root";
+$password = "12345678";
+$dbname = "assetsmanagement";
+
+$conn = new mysqli($host, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+    $sql = "SELECT s.*,d.department_name FROM `staffs` as `s` JOIN `department` as `d` ON s.department_id = d.id WHERE s.id =".$id;
+    $result = mysqli_query($conn,$sql);
+    $data = mysqli_fetch_array($result);
+
+    $dep_name = array();
+    $sql = "SELECT * FROM `department` ";
+    $resultdep = mysqli_query($conn,$sql);
+    while($dep = mysqli_fetch_array($resultdep)){
+        array_push($dep_name,['id' =>$dep['id'],'department_name' => $dep['department_name']]);
+    }
+}
 ?>
 <div class="container-fluid">
+    <form action="../../assets/db/updateuser.php" method="post">
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
-            <input type="text" id="usernameForUser" class="form-control" placeholder="ชื่อผู้ใช้งาน">
+            <input type="hidden" name="id" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $id?>">
+            <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $data['username']?>" readonly>
         </div>
         <div class="col-md-6">
-            <input type="text" id="usernameForUser" class="form-control" placeholder="รหัสผ่าน">
+            <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" value="<?php echo $data['password']?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
-            <input type="text" id="usernameForUser" class="form-control" placeholder="ชื่อ">
+            <input type="text" name="fisrtname" class="form-control" placeholder="ชื่อ" value="<?php echo $data['staff_firstname']?>">
         </div>
         <div class="col-md-6">
-            <input type="text" id="usernameForUser" class="form-control" placeholder="นามสกุล">
+            <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" value="<?php echo $data['staff_lastname']?>">
+        </div>
+    </div>
+    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col-md-6">
+            <input type="text" name="telephone" class="form-control" placeholder="เบอร์มือถือ" value="<?php echo $data['telephone']?>">
+        </div>
+        <div class="col-md-6">
+            <input type="email" name="email" class="form-control" placeholder="E-Mail" value="<?php echo $data['email']?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col">
-            <select class="form-select">
-                <option selected>เลือก Role </option>
-                <option value="1">เจ้าหน้าที่</option>
-                <option value="2">ผู้ดูแลระบบ</option>
-                <option value="3">ผู้บริหาร</option>
+            <select class="form-select" name="permission">
+               <?php
+               $option = array("staff","admin","ceo");
+               if($data['permission'] == $option[0]){
+                echo "<option value='".$data['permission']."' selected> เจ้าหน้าที่ </option>";
+                echo "<option value='".$option[1]."' > ผู้ดูแลระบบ </option>";
+                echo "<option value='".$option[2]."' > ผู้บริหาร </option>";
+               }
+               else if($data['permission'] == $option[1]){
+                echo "<option value='".$data['permission']."' selected> ผู้ดูแลระบบ </option>";
+                echo "<option value='".$option[0]."' > เจ้าหน้าที่ </option>";
+                echo "<option value='".$option[2]."' > ผู้บริหาร </option>";
+               }
+               else if($data['permission'] == $option[2]){
+                echo "<option value='".$data['permission']."' selected> ผู้บริหาร </option>";
+                echo "<option value='".$option[0]."' > เจ้าหน้าที่ </option>";
+                echo "<option value='".$option[1]."' > ผู้ดูแลระบบ </option>";
+               }
+               ?>
+            </select>
+        </div>
+        <div class="col">
+            <select class="form-select" name="department_id">
+               <?php
+               if($data['department_id'] == $dep_name[0]['id'] ){
+                echo "<option value='".$data['department_id']."' selected>".$data['department_name']."</option>";
+                echo "<option value='".$dep_name[1]['id']."' >".$dep_name[1]['department_name']."</option>";
+                echo "<option value='".$dep_name[2]['id']."' >".$dep_name[2]['department_name']."</option>";
+                echo "<option value='".$dep_name[3]['id']."' >".$dep_name[3]['department_name']."</option>";
+               }
+               else if($data['department_id'] == $dep_name[1]['id'] ){
+                echo "<option value='".$data['department_id']."' selected>".$data['department_name']."</option>";
+                echo "<option value='".$dep_name[0]['id']."' >".$dep_name[0]['department_name']."</option>";
+                echo "<option value='".$dep_name[2]['id']."' >".$dep_name[2]['department_name']."</option>";
+                echo "<option value='".$dep_name[3]['id']."' >".$dep_name[3]['department_name']."</option>";
+               }
+               else if($data['department_id'] == $dep_name[2]['id'] ){
+                echo "<option value='".$data['department_id']."' selected>".$data['department_name']."</option>";
+                echo "<option value='".$dep_name[0]['id']."' >".$dep_name[0]['department_name']."</option>";
+                echo "<option value='".$dep_name[1]['id']."' >".$dep_name[1]['department_name']."</option>";
+                echo "<option value='".$dep_name[3]['id']."' >".$dep_name[3]['department_name']."</option>";
+               }
+               else if($data['department_id'] == $dep_name[3]['id'] ){
+                echo "<option value='".$data['department_id']."' selected>".$data['department_name']."</option>";
+                echo "<option value='".$dep_name[0]['id']."' >".$dep_name[0]['department_name']."</option>";
+                echo "<option value='".$dep_name[1]['id']."' >".$dep_name[1]['department_name']."</option>";
+                echo "<option value='".$dep_name[2]['id']."' >".$dep_name[2]['department_name']."</option>";
+               }
+               
+               ?>
             </select>
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 38rem; width:50%;">
-        <div class="col">
-            <a class="btn btn-danger btn-back">กลับ</a>
-        </div>
-        <div class="col">
-            <a class="btn btn-primary btn-save">บันทึก</a>
-        </div>
+    <div class="col">
+    <input type="submit" class="btn btn-success" name="submit" value="บันทึก">
     </div>
+    <div class="col">
+    <input type="reset" class="btn btn-danger" value="reset">
+    </div>
+    </div>
+    </form>
 </div>

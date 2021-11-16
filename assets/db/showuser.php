@@ -22,8 +22,13 @@ if ($result = mysqli_query($conn, $sql)) {
             echo "<td>" . $row['department_name'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
             echo "<td>" . $row['telephone'] . "</td>";
-            echo "<td>" . $row['permission'] . "</td>";
-            echo "<td>" . "<a class='btn'> <i class='bi bi-pencil-square'></i></a>" . "</td>";
+            if($row['permission'] == "staff")
+                echo "<td> เจ้าหน้าที่ </td>";
+            else if($row['permission'] == "admin")
+                echo "<td> ผู้ดูแลระบบ </td>";
+            else if($row['permission'] == "ceo")
+                echo "<td> ผู้บริหาร </td>";
+            echo "<td>" . "<a class='btn' onclick=EditUser('" . $row['id'] . "')> <i class='bi bi-pencil-square'></i></a>" . "</td>";
             echo "</tr>";
         }
         // Free result set

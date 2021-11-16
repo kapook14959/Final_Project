@@ -37,9 +37,12 @@ include('../layout/masterpage.php');
             </select>
         </div>
         <div class="col">
+            <select class='form-select' name='department_id'>
+                <option selected>เลือก สาขา </option>
                 <?php
                 include('../../assets/db/showdepartment.php');
                 ?>
+            </select>
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 38rem; width:50%;">

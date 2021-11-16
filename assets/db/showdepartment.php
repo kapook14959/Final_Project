@@ -15,14 +15,14 @@ if ($result = mysqli_query($conn, $sql)) {
 
     if (mysqli_num_rows($result) > 0) {
 
-        echo"<select class='form-select' name='department_id'>
-        <option selected>เลือก สาขา </option>";
+        // echo"<select class='form-select' name='department_id'>
+        // <option selected>เลือก สาขา </option>";
 
         while ($row = mysqli_fetch_array($result)) {
             echo "<option value=".$row['id'].">" . $row['department_name'] . "</option>";
         }
 
-        echo"</select>";
+        // echo"</select>";
         // Free result set
         mysqli_free_result($result);
     } else {
