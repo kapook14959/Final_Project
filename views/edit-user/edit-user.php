@@ -1,5 +1,9 @@
 <?php
+
 include('../layout/masterpage.php');
+if(empty($_SESSION['username'])){
+    header('location:/final_project/');
+}
 
 $host = "localhost";
 $port = "3306";

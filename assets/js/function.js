@@ -22,3 +22,8 @@ function EditAssets(status) {
         window.location.href = "../../views/edit-assets/edit-assets.php?id="+ status;
     }
 }
+function Log_out(status){
+    if (status) {
+        window.location.href = "../../assets/db/logout_action.php";
+    }
+}

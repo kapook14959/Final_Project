@@ -77,11 +77,6 @@ body {
   margin-bottom: 20px;
 }
 
-.username {
-  margin-bottom: 1px;
-  text-align: right;
-}
-
 .wrapper > .header {
   background: #f77100;
   width: 100%;
@@ -93,8 +88,18 @@ body {
 }
 
 .wrapper > .header > .UserBox > .username {
+  display: block;
+  text-decoration: none;
+  color: #fff !important;
+  margin-bottom: 1px;
+  text-align: right;
+}
+.wrapper > .header > .UserBox > .info {
+  right: 0;
   text-decoration: none;
   color: #fff;
+  margin-bottom: 1px;
+  text-align: right;
 }
 
 .container-fluid {

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/login.css">
-    <title>Document</title>
+    <title>log-in</title>
 </head>
 
 <body>
@@ -20,22 +20,24 @@
                     <div class="login-title-div">
                         <p class="login-title">ลงชื่อเข้าสู่ระบบ</p>
                     </div>
-                    <input class="login-input" type="text" placeholder="Tel"></input>
+                    <form action="../../assets/db/login_action.php" method="post">
+                    <input class="login-input" type="text" placeholder="Username" name="username" required>
                     <div class="login-textfield-div">
-                        <input class="login-input" type="password" placeholder="Password"></input>
+                        <input class="login-input" type="password" placeholder="Password" name="password" required>
                     </div>
                     </br>
-                    <button class="login-button" type="submit">
+                    <button class="login-button" type="submit" name="submit">
                         เข้าสู่ระบบ
                     </button>
-                    <div class="login-reset-password-div">
+                    </form>
+                    <!-- <div class="login-reset-password-div">
                         <p class="login-forgot-password-text">
                             ลืมรหัสผ่าน ? <span>&nbsp;&nbsp;</span>
                             <Link class="login-reset-password-text" to="/">
                             รีเซ็ตรหัสผ่าน
                             </Link>
                         </p>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

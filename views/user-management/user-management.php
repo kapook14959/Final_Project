@@ -1,5 +1,8 @@
 <?php
 include('../layout/masterpage.php');
+if(empty($_SESSION['username'])){
+    header('location:/final_project/');
+}
 ?>
 <style>
     <?php

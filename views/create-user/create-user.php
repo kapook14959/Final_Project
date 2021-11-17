@@ -1,5 +1,8 @@
 <?php
 include('../layout/masterpage.php');
+if(empty($_SESSION['username'])){
+    header('location:/final_project/');
+}
 ?>
 <div class="container-fluid">
     <form action="../../assets/db/insertuser.php" method="post">

@@ -1,6 +1,8 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,9 +32,8 @@
         </div>
         <div class="header">
             <div class="UserBox">
-                <p class="username">USERNAME</p>
-                <div class="info">
-                </div>
+                <p class="username" ><?php echo $_SESSION['username'] ?></p>
+                <div class="info" onclick="Log_out(true);"> <i class="bi bi-box-arrow-right"></i></div>
             </div>
         </div>
     </div>
