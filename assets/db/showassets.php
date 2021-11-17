@@ -51,7 +51,7 @@ if ($result = mysqli_query($conn, $sql)) {
                 echo "<td> NO IMAGE </td>";
             }
             else{
-                echo "<td>" . $row['image'] . "</td>";
+                echo "<td><img src='".$row['image']."' width='50px' height='auto'></td>"; 
             }
             echo "<td>" . "<a class='btn' onclick=EditAssets('" . $row['id'] . "')> <i class='bi bi-pencil-square'></i></a>" . "</td>";
             echo "</tr>";

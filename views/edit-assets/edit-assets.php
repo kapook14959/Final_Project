@@ -50,7 +50,7 @@ if(isset($_GET['id'])){
 }
 ?>
 <div class="container-fluid">
-<form action="../../assets/db/updateassets.php" method="post">
+<form action="../../assets/db/updateassets.php" method="post" enctype="multipart/form-data">
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
             <input type="text" name="id" class="form-control" placeholder="เลขครุภัณฑ์" value="<?php echo $data['id'];?>" readonly>
@@ -109,6 +109,7 @@ if(isset($_GET['id'])){
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleFormControlFile1">รูปภาพ</label>
+                <img src="<?php echo $data['image']?>" width="50px" height="auto" alt="" srcset="">
                 <input type="file" class="form-control-file" name="image">
             </div>
         </div>
