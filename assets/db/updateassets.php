@@ -34,41 +34,44 @@ if(isset($_POST['submit'])){
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     $check = getimagesize($_FILES["image"]["tmp_name"]);
   if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
+    echo "File is an image - " . $check["mime"] . ". <br>";
     $uploadOk = 1;
-  } else {
-    echo "File is not an image.";
+  } 
+  else {
+    echo "File is not an image. <br>";
     $uploadOk = 0;
   }
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-  $uploadOk = 0;
-}
-if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
-} else {
-  if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-    $image = $target_file;
-    echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
-  } else {
-    echo "Sorry, there was an error uploading your file.";
+  if ($_FILES["fileToUpload"]["size"] > 500000) {
+    echo "Sorry, your file is too large. <br>";
+    $uploadOk = 0;
   }
-
-}
+  if  ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed. <br>";
+    $uploadOk = 0;
   }
-  $sql = "UPDATE `assets` SET `id`='$id',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id',`image` ='$image'  WHERE `id` = '$id'";
-  
+  if ($uploadOk == 0) {
+    echo "Sorry, your file was not uploaded. <br>";
+    $sql = "UPDATE `assets` SET `id`='$id',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id'  WHERE `id` = '$id'";
+  } 
+  else {
+    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+      $image = $target_file;
+      echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+      $sql = "UPDATE `assets` SET `id`='$id',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id',`image` ='$image'  WHERE `id` = '$id'";
+    } 
+    else {
+      echo "Sorry, there was an error uploading your file.";
+    }
+  }
+}
 
 
 if (mysqli_query($conn, $sql)) {
-  echo $sql;
-    echo "Record updated successfully";
+  echo $sql."<br>";
+    echo "Record updated successfully <br>";
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-  
 }
 
 

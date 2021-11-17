@@ -110,7 +110,7 @@ if(isset($_GET['id'])){
             <div class="form-group">
                 <label for="exampleFormControlFile1">รูปภาพ</label>
                 <img src="<?php echo $data['image']?>" width="50px" height="auto" alt="" srcset="">
-                <input type="file" class="form-control-file" name="image">
+                <input type="file" class="form-control-file" name="image" >
             </div>
         </div>
     </div>

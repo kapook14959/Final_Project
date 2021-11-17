@@ -27,7 +27,7 @@ if ($result = mysqli_query($conn, $sql)) {
             echo "<td>" . $row['detail'] . "</td>";
             echo "<td>" . $row['unit_name'] . "</td>";
             echo "<td>" . $row['date_admit'] . "</td>";
-            echo "<td>" . number_format($row['value_asset']) . "</td>";
+            echo "<td>" . $row['value_asset'] . "</td>";
             echo "<td>" . $row['number_delivery'] . "</td>";
             echo "<td>" . $row['seller_name'] . "</td>";
             echo "<td>" . $row['serial_number'] . "</td>";

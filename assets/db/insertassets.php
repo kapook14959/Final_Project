@@ -39,35 +39,36 @@ if(isset($_POST['submit'])){
       echo "File is not an image.";
       $uploadOk = 0;
     }
-      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-  }
-  if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+    if ($_FILES["fileToUpload"]["size"] > 500000) {
+      echo "Sorry, your file is too large.";
+      $uploadOk = 0;
+    }
+    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      $uploadOk = 0;
+    }
+    if ($uploadOk == 0) {
+      echo "Sorry, your file was not uploaded.";
   // if everything is ok, try to upload file
-  } else {
-    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
-      $image = $target_file;
-      echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
-    } else {
+    } 
+    else {
+      if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+        $image = $target_file;
+        echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
+      }
+      else {
       echo "Sorry, there was an error uploading your file.";
     }
-  
   }
 }
-
-    $sql = "INSERT INTO `assets`(`id`, `asset_name`, `detail`, `year_of_budget`, `value_asset`, `seller_name`, `status`, `number_delivery`, `serial_number`, `date_admit`, `expiration_date`, `assets_types_id`, `unit_id`, `department_id`, `money_source_id`,`image`) 
-    VALUES ('$id','$name','$detail','$year_of_budget','$value_assets','$seller','$status','$delivery_number','$serial_number','$date_admit','$expiration_date','$assets_types_id','$unit_id','$department_id','$money_source_id','$image')";
-
-
+$sql = "INSERT INTO `assets`(`id`, `asset_name`, `detail`, `year_of_budget`, `value_asset`, `seller_name`, `status`, `number_delivery`, `serial_number`, `date_admit`, `expiration_date`, `assets_types_id`, `unit_id`, `department_id`, `money_source_id`,`image`) 
+VALUES ('$id','$name','$detail','$year_of_budget','$value_assets','$seller','$status','$delivery_number','$serial_number','$date_admit','$expiration_date','$assets_types_id','$unit_id','$department_id','$money_source_id','$image')";
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
-  } else {
+  }
+  else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
-  
 }
 
 header("location:/Final_project/views/detail-assets/detail-assets.php");
