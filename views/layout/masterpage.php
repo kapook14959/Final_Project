@@ -22,19 +22,33 @@ session_start();
         <div class="sidebar">
             <a href="../layout/masterpage.php"><img src="../../assets/images/logo-footer.png" alt="logo"></a>
             <ul>
-                <li><a href="#"><i class="bi bi-graph-up"></i> รายการครุภัณฑ์</a></li>
+                <li><a href="#"><i class="bi bi-graph-up"></i> รายงานครุภัณฑ์</a></li>
                 <li><a href="../detail-assets/detail-assets.php"><i class="bi bi-tv"></i> จัดการครุภัณฑ์</a></li>
+                <li>
+                    <div onmouseover="ShowSubmenu(true)" onmouseout="HideSubmenu(true)"><a><i class="bi bi-info"></i> จัดการข้อมูลทั่วไป</a> 
+                        <ul class="sub-menu" id="hide">
+                            <li><a href="../unit/unit.php"><i class="bi bi-circle"></i> จัดการข้อมูลหน่วยนับ</a></li>
+                            <li><a href="../department/department.php"><i class="bi bi-circle"></i> จัดการภาควิชา</a></li>
+                            <li><a href="../money-source/money-source.php"><i class="bi bi-circle"></i> จัดการแหล่งเงิน</a></li>
+                            <li><a href="../assets-types/assets-types.php"><i class="bi bi-circle"></i> จัดการประเภทครุภัณฑ์</a></li> 
+                        </ul>
+                    </div>
+                </li>
                 <li><a href="#"><i class="bi bi-arrow-left-right"></i> ยืม - คืน ครุภัณฑ์</a></li>
                 <li><a href="#"><i class="bi bi-cart3"></i> จำหน่ายครุภัณฑ์</a></li>
                 <li><a href="#"><i class="bi bi-gear"></i> แจ้งซ่อมครุภัณฑ์</a></li>
                 <li><a href="../user-management/user-management.php"><i class="bi bi-people-fill"></i> จัดการผู้ใช้งาน</a></li>
-            </ul>
+            </ul> 
         </div>
         <div class="header">
-            <div class="UserBox">
-                <p class="username" ><?php echo $_SESSION['username'] ?></p>
-                <div class="info" onclick="Log_out(true);"> <i class="bi bi-box-arrow-right"></i></div>
-            </div>
+                <div class="row UserBox">
+                    <div class="col text-end">
+                        <p class="username" ><?php echo $_SESSION['username'] ?></p>
+                    </div>
+                    <div class="col text-end">
+                        <div class="info" onclick="Log_out(true);"> <i class="bi bi-box-arrow-right"></i></div>
+                    </div>
+                </div> 
         </div>
     </div>
 </body>

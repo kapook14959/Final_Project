@@ -1,3 +1,5 @@
+
+
 function CreateUser(status) {
     console.log("Click Create User");
     if (status) {
@@ -25,5 +27,15 @@ function EditAssets(status) {
 function Log_out(status){
     if (status) {
         window.location.href = "../../assets/db/logout_action.php";
+    }
+}
+function ShowSubmenu(status){
+    if(status){
+        document.getElementById("hide").style.display = "block";
+    }
+}
+function HideSubmenu(status){
+    if(status){
+        document.getElementById("hide").style.display = "none";
     }
 }
