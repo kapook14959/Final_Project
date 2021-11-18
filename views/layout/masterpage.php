@@ -41,11 +41,9 @@ session_start();
             </ul> 
         </div>
         <div class="header">
-                <div class="row UserBox">
-                    <div class="col text-end">
-                        <p class="username" ><?php echo $_SESSION['username'] ?></p>
-                    </div>
-                    <div class="col text-end">
+                <div class="row">
+                    <div class="UserBox text-end">
+                        <div class="username" ><?php echo $_SESSION['username'] ?></div>
                         <div class="info" onclick="Log_out(true);"> <i class="bi bi-box-arrow-right"></i></div>
                     </div>
                 </div> 

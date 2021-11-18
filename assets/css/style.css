@@ -164,10 +164,11 @@ body {
 }
 
 .wrapper > .header > .UserBox {
-  margin: 30px 10px 0 0;
+ top: 30px;
 }
 
-.wrapper > .header > .UserBox > .username {
+.username {
+  font-size: x-large;
   text-decoration: none;
   color: #fff;
   margin-bottom: 1px;
