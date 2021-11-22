@@ -1,14 +1,8 @@
 <?php
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
+session_start();
+include '../../assets/db/connect.php';
+$conn = $_SESSION['conn'];
 
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $sql = "SELECT a.*,t.assets_types_name,u.unit_name,d.department_name,m.money_source_name FROM `assets` AS a 
 JOIN `assets_types` as t ON a.assets_types_id = t.id 
 JOIN `unit` as u ON a.unit_id = u.id 

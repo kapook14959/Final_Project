@@ -1,17 +1,8 @@
 <?php
 session_start();
+include '../../assets/db/connect.php';
 
-
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = $_SESSION['conn'];
 
 if(isset($_POST['submit'])){
     $user = $_POST['username'];
@@ -22,12 +13,11 @@ if(isset($_POST['submit'])){
     $res = mysqli_fetch_assoc($result);
     if(!empty($res['username'])){
         $_SESSION['username'] = $res['username'];
-        sleep(5);
+        sleep(3);
         header('location:/final_project/views/layout/masterpage.php');
     }
     else{
-        echo "<script>alert('fail')</script>";
-        sleep(5);
+        sleep(3);
         header('location:/final_project/');
     }
     

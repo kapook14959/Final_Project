@@ -1,14 +1,8 @@
 <?php
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
+session_start();
+include '../../assets/db/connect.php';
+$conn = $_SESSION['conn'];
 
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 if(isset($_POST['submit'])){
     $id = $_POST['id'];
     $name = $_POST['sourcename'];

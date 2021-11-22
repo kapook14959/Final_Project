@@ -1,14 +1,8 @@
 <?php
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
+session_start();
+include '../../assets/db/connect.php';
+$conn = $_SESSION['conn'];
 
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $sql = "SELECT * FROM `money_source` ";
 
 if ($result = mysqli_query($conn, $sql)) {

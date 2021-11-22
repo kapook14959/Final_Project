@@ -1,14 +1,7 @@
 <?php
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+session_start();
+include '../../assets/db/connect.php';
+$conn = $_SESSION['conn'];
 
 $sql = "SELECT * FROM `assets_types`";
 $res = mysqli_query($conn,$sql);

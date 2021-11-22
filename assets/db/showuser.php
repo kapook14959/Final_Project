@@ -1,14 +1,8 @@
 <?php
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
+session_start();
+include '../../assets/db/connect.php';
+$conn = $_SESSION['conn'];
 
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $sql = "SELECT s.*,d.department_name FROM `staffs` as `s` JOIN `department` as `d` ON s.department_id = d.id";
 
 if ($result = mysqli_query($conn, $sql)) {
