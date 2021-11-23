@@ -3,16 +3,9 @@ include('../layout/masterpage.php');
 if(empty($_SESSION['username'])){
     header('location:/final_project/');
 }
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
+include('../../assets/db/connect.php');
+$conn = $_SESSION['conn'];
 
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $sql = "SELECT a.*,t.assets_types_name,u.unit_name,d.department_name,m.money_source_name FROM `assets` AS a 
@@ -56,49 +49,61 @@ if(isset($_GET['id'])){
 <form action="../../assets/db/updateassets.php" method="post" enctype="multipart/form-data">
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >เลขครุภัณฑ์</label>
             <input type="text" name="id" class="form-control" placeholder="เลขครุภัณฑ์" value="<?php echo $data['id'];?>" readonly>
         </div>
         <div class="col-md-6">
+        <label >ปีงบประมาณ</label>
             <input type="text" name="year_of_budget" class="form-control" placeholder="ปีงบประมาณ" value="<?php echo $data['year_of_budget'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >ชื่อครุภัณฑ์</label>
             <input type="text" name="name" class="form-control" placeholder="ชื่อครุภัณฑ์" value="<?php echo $data['asset_name'];?>">
         </div>
         <div class="col-md-6">
+        <label >รายละเอียด</label>
             <input type="text" name="detail" class="form-control" placeholder="รายละเอียด" value="<?php echo $data['detail'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >วันที่เข้ารับ</label>
             <input type="date" name="date_admit" class="form-control" placeholder="วันที่เข้ารับ" value="<?php echo $data['date_admit'];?>">
         </div>
         <div class="col-md-6">
+        <label >มูลค่าครุภัณฑ์</label>
             <input type="text" name="value_assets" class="form-control" placeholder="มูลค่าครุภัณฑ์" value="<?php echo $data['value_asset'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >เลขที่ใบส่งของ</label>
             <input type="text" name="delivery_number" class="form-control" placeholder="เลขที่ใบส่งของ" value="<?php echo $data['number_delivery'];?>">
         </div>
         <div class="col-md-6">
+        <label >ผู้ขาย</label>
             <input type="text" name="seller" class="form-control" placeholder="ผู้ขาย" value="<?php echo $data['seller_name'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >หมายเลขซีเรียล</label>
             <input type="text" name="serial_number" class="form-control" placeholder="หมายเลขซีเรียล" value="<?php echo $data['serial_number'];?>">
         </div>
         <div class="col-md-6">
+        <label >วันหมดประกัน</label>
             <input type="date" name="expiration_date" class="form-control" placeholder="วันหมดประกัน" value="<?php echo $data['expiration_date'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >สถานะ</label>
             <input type="text" name="status" class="form-control" placeholder="สถานะ" value="<?php echo $data['status'];?>">
         </div>
         <div class="col-md-6">
+        <label >ที่อยู่</label>
             <input type="text" name="address" class="form-control" placeholder="ที่อยู่" >
         </div>
     </div>
@@ -607,7 +612,7 @@ if(isset($_GET['id'])){
                 <input type="submit" value="บันทึก" name="submit" class="btn btn-success">
         </div>
         <div class="col" style="margin-right: 37%;">
-            <input type="reset" value="reset" class="btn btn-danger">
+        <a class="btn btn-danger" onclick="GoBack(true)"> <span>กลับ</span> </a>
         </div>
     </div>
 </form>

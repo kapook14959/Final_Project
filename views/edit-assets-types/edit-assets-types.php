@@ -3,17 +3,9 @@ include('../layout/masterpage.php');
 if(empty($_SESSION['username'])){
     header('location:/final_project/');
 }
+include('../../assets/db/connect.php');
+$conn = $_SESSION['conn'];
 
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $sql = "SELECT * FROM `assets_types` WHERE id =".$id;
@@ -29,7 +21,12 @@ if(isset($_GET['id'])){
             <input type="text" class="form-control" name="typesname" placeholder="กรอกประเภทครุภัณฑ์" value="<?php echo $data['assets_types_name'];?>">
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col">
             <input type="submit" class="btn btn-success" name="submit">
+        </div>
+        <div class="col">
+        <a class="btn btn-danger" onclick="GoBack(true)"> <span>กลับ</span> </a>
+        </div>
         </div>
     </form>
 </div>

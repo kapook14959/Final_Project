@@ -39,3 +39,13 @@ function HideSubmenu(status){
         document.getElementById("hide").style.display = "none";
     }
 }
+function searchBox(query){
+    if(query){
+        window.location.href = "../../views/detail-assets/detail-assets.php?q="+ query.value;
+    }
+}
+function GoBack(status){
+    if(status){
+        window.history.back();
+    }
+}

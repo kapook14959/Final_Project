@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../../assets/db/connect.php';
-$conn = $_SESSION['conn'];
+$conn =  $_SESSION['conn'];
 
 $sql = "SELECT * FROM `unit`";
 $res = mysqli_query($conn,$sql);

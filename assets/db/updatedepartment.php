@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../../assets/db/connect.php';
-$conn = $_SESSION['conn'];
+$conn =  $_SESSION['conn'];
 
 if(isset($_POST['submit'])){
     $id = $_POST['id'];

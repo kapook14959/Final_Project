@@ -4,17 +4,9 @@ include('../layout/masterpage.php');
 if(empty($_SESSION['username'])){
     header('location:/final_project/');
 }
+include('../../assets/db/connect.php');
+$conn = $_SESSION['conn'];
 
-$host = "localhost";
-$port = "3306";
-$username = "root";
-$password = "12345678";
-$dbname = "assetsmanagement";
-
-$conn = new mysqli($host, $username, $password, $dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 if(isset($_GET['id'])){
     $id = $_GET['id'];
     $sql = "SELECT s.*,d.department_name FROM `staffs` as `s` JOIN `department` as `d` ON s.department_id = d.id WHERE s.id =".$id;
@@ -34,30 +26,37 @@ if(isset($_GET['id'])){
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
             <input type="hidden" name="id" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $id;?>">
+            <label >ชื่อผู้ใช้งาน</label>
             <input type="text" name="username" class="form-control" placeholder="ชื่อผู้ใช้งาน" value="<?php echo $data['username'];?>" readonly>
         </div>
         <div class="col-md-6">
+        <label >รหัสผ่าน</label>
             <input type="password" name="password" class="form-control" placeholder="รหัสผ่าน" value="<?php echo $data['password'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >ชื่อ</label>
             <input type="text" name="fisrtname" class="form-control" placeholder="ชื่อ" value="<?php echo $data['staff_firstname'];?>">
         </div>
         <div class="col-md-6">
+        <label >นามสกุล</label>
             <input type="text" name="lastname" class="form-control" placeholder="นามสกุล" value="<?php echo $data['staff_lastname'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
+        <label >เบอร์มือถือ</label>
             <input type="text" name="telephone" class="form-control" placeholder="เบอร์มือถือ" value="<?php echo $data['telephone'];?>">
         </div>
         <div class="col-md-6">
+        <label >อีเมล์</label>
             <input type="email" name="email" class="form-control" placeholder="E-Mail" value="<?php echo $data['email'];?>">
         </div>
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col">
+        <label >สิทธิ์การใช้งาน</label>
             <select class="form-select" name="permission">
                <?php
                $option = array("staff","admin","ceo");
@@ -80,6 +79,7 @@ if(isset($_GET['id'])){
             </select>
         </div>
         <div class="col">
+        <label >หน่วยงาน</label>
             <select class="form-select" name="department_id">
                <?php
                if($data['department_id'] == $dep_name[0]['id'] ){
@@ -116,7 +116,7 @@ if(isset($_GET['id'])){
             <input type="submit" class="btn btn-success" name="submit" value="บันทึก">
         </div>
         <div class="col" style="margin-right: 37%;">
-            <input type="reset" class="btn btn-danger" value="reset">
+        <a class="btn btn-danger" onclick="GoBack(true)"> <span>กลับ</span> </a>
         </div>
     </div>
     </form>

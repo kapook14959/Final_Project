@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../../assets/db/connect.php';
-$conn = $_SESSION['conn'];
+$conn =  $_SESSION['conn'];
 
 $sql = "SELECT s.*,d.department_name FROM `staffs` as `s` JOIN `department` as `d` ON s.department_id = d.id";
 

@@ -1,7 +1,7 @@
 <?php
 session_start();
 include '../../assets/db/connect.php';
-$conn = $_SESSION['conn'];
+$conn =  $_SESSION['conn'];
 
 $sql = "SELECT * FROM `assets_types`";
 $res = mysqli_query($conn,$sql);
