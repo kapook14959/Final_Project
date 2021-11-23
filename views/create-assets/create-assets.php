@@ -76,8 +76,8 @@ if(empty($_SESSION['username'])){
         <div class="col-md-6">
             <div class="form-group">
                 <label for="exampleFormControlFile1">รูปภาพ</label>
-                <input type="file" class="form-control-file" name="image">
-                <img src="<?php echo $_file['image']; ?>">
+                <input type="file" class="form-control-file" name="image" onchange="readURL(this);">
+                <img id="preview" src=" " width="50px" height="auto">
             </div>
         </div>
     </div>
