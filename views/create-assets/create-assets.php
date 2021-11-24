@@ -28,7 +28,7 @@ if(empty($_SESSION['username'])){
     </div>
     <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
         <div class="col-md-6">
-        <label >วันที่เข้ารับ</label>
+        <label >วันที่รับเข้าคลัง</label>
             <input type="date" name="date_admit" class="form-control" placeholder="วันที่เข้ารับ">
         </div>
         <div class="col-md-6">
