@@ -6,6 +6,7 @@ if (empty($_SESSION['username'])) {
 ?>
 <div class="container-fluid">
     <form action="../../assets/db/insertassets.php" method="post" enctype="multipart/form-data">
+<<<<<<< HEAD
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">
                 <label>เลขครุภัณฑ์</label>
@@ -15,6 +16,46 @@ if (empty($_SESSION['username'])) {
                 <label>ปีงบประมาณ</label>
                 <input type="text" name="year_of_budget" class="form-control" placeholder="ปีงบประมาณ">
             </div>
+=======
+    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col-md-6">
+            <label >เลขครุภัณฑ์</label>
+            <input type="text" name="id" class="form-control" placeholder="เลขครุภัณฑ์">
+        </div>
+        <div class="col-md-6">
+        <label >ปีงบประมาณ</label>
+            <input type="text" name="year_of_budget" class="form-control" placeholder="ปีงบประมาณ">
+        </div>
+    </div>
+    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col-md-6">
+        <label >ชื่อครุภัณฑ์</label>
+            <input type="text" name="name" class="form-control" placeholder="ชื่อครุภัณฑ์">
+        </div>
+        <div class="col-md-6">
+        <label >รายละเอียด</label>
+            <input type="text" name="detail" class="form-control" placeholder="รายละเอียด">
+        </div>
+    </div>
+    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col-md-6">
+        <label >วันที่รับเข้าคลัง</label>
+            <input type="date" name="date_admit" class="form-control" placeholder="วันที่เข้ารับ">
+        </div>
+        <div class="col-md-6">
+        <label >มูลค่าครุภัณฑ์</label>
+            <input type="text" name="value_assets" class="form-control" placeholder="มูลค่าครุภัณฑ์">
+        </div>
+    </div>
+    <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <div class="col-md-6">
+        <label >เลขที่ใบส่งของ</label>
+            <input type="text" name="delivery_number" class="form-control" placeholder="เลขที่ใบส่งของ">
+        </div>
+        <div class="col-md-6">
+        <label >ผู้ขาย</label>
+            <input type="text" name="seller" class="form-control" placeholder="ผู้ขาย">
+>>>>>>> b00263d9f70dff7b58c5f41968a151e9369fcfbe
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">

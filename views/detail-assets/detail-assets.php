@@ -14,10 +14,11 @@ $conn = $_SESSION['conn'];
 </style>
 <div class="container-fluid">
     <h1 style="margin-left:10%;">แสดงข้อมูลครุภัณฑ์</h1>
-    <form action=" " method="post">
-    <input type="text" name="search" style="margin-left:10%;">
-    <input type="submit" value="ค้นหา" class="btn btn-primary">
-    </form>
+            <form action=" " method="post">
+            <input type="text" name="search" style="margin-left:10%; width:10%;" class="form-control" placeholder="Search">
+            <input type="submit" value="ค้นหา" class="btn btn-primary" style="margin-left:21%; margin-top:-2.5%;">
+            </form>
+    </div>
     <a class="button-17" onclick="CreateAssets(true);" style="margin-left: 5%">เพิ่มครุภัณฑ์</a>
     <table style="width: 78%;">
         <tr>
