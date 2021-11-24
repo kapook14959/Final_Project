@@ -25,7 +25,7 @@ WHERE `asset_name` LIKE '%{$_POST["search"]}%'";
                 // echo "<td>" . $row['value_asset'] . "</td>";
                 echo "<td>" . $row['number_delivery'] . "</td>";
                 // echo "<td>" . $row['seller_name'] . "</td>";
-                echo "<td>" . $row['serial_number'] . "</td>";
+                echo "<td>". $row['serial_number'] . "</td>"; 
                 echo "<td>" . $row['expiration_date'] . "</td>";
                 echo "<td>" . $row['assets_types_name'] . "</td>";
                 // echo "<td>" . $row['status'] . "</td>";
@@ -83,7 +83,7 @@ if ($result = mysqli_query($conn, $sql)) {
             echo "<td>" . $row['number_delivery'] . "</td>";
             // echo "<td>" . $row['seller_name'] . "</td>";
             echo "<td>" . $row['serial_number'] . "</td>";
-            echo "<td>" . $row['expiration_date'] . "</td>";
+            echo "<td>" . DateThai($row['expiration_date']) . "</td>";
             echo "<td>" . $row['assets_types_name'] . "</td>";
             // echo "<td>" . $row['status'] . "</td>";
             // if($row['detail_borrow_and_return'] == null){
@@ -117,6 +117,26 @@ if ($result = mysqli_query($conn, $sql)) {
     echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
 }
+function DateThai($strDate)
+{
+$strYear = date("Y",strtotime($strDate))+543;
 
+$strMonth= date("n",strtotime($strDate));
+
+$strDay= date("j",strtotime($strDate));
+
+$strHour= date("H",strtotime($strDate));
+
+$strMinute= date("i",strtotime($strDate));
+
+$strSeconds= date("s",strtotime($strDate));
+
+$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+
+$strMonthThai=$strMonthCut[$strMonth];
+
+return "$strDay $strMonthThai $strYear";
+
+}
 
 mysqli_close($conn);

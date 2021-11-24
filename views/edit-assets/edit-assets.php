@@ -44,6 +44,27 @@ if(isset($_GET['id'])){
         array_push($assetstype_name,['id' =>$type['id'],'assets_types_name' => $type['assets_types_name']]);
     }
 }
+function DateThai($strDate)
+{
+$strYear = date("Y",strtotime($strDate))+543;
+
+$strMonth= date("n",strtotime($strDate));
+
+$strDay= date("j",strtotime($strDate));
+
+$strHour= date("H",strtotime($strDate));
+
+$strMinute= date("i",strtotime($strDate));
+
+$strSeconds= date("s",strtotime($strDate));
+
+$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
+
+$strMonthThai=$strMonthCut[$strMonth];
+
+return "$strDay $strMonthThai $strYear";
+
+}
 ?>
 <div class="container-fluid">
 <form action="../../assets/db/updateassets.php" method="post" enctype="multipart/form-data">
