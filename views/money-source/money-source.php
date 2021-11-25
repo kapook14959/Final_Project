@@ -1,11 +1,12 @@
 <?php
 include('../layout/masterpage.php');
-if(empty($_SESSION['username'])){
+if (empty($_SESSION['username'])) {
     header('location:/final_project/');
 }
 ?>
 <div class="container-fluid">
-<a class="button-17" href="../../views/create-money-source/create-money-source.php">เพิ่มแหล่งเงิน</a>
+    <h1 style="margin-left:10%;">แสดงข้อมูลแหล่งเงิน</h1>
+    <a class="button-17" href="../../views/create-money-source/create-money-source.php">เพิ่มแหล่งเงิน</a>
     <table style="margin-left: 33%; width:50%;">
         <tr>
             <th>ลำดับ</th>

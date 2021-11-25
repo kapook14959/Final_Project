@@ -1,6 +1,6 @@
 <?php
 include('../layout/masterpage.php');
-if(empty($_SESSION['username'])){
+if (empty($_SESSION['username'])) {
     header('location:/final_project/');
 }
 ?>
@@ -10,6 +10,7 @@ if(empty($_SESSION['username'])){
     ?>
 </style>
 <div class="container-fluid">
+    <h1 style="margin-left:10%;">แสดงข้อมูลผู้ใช้งาน</h1>
     <a class="button-17" onclick="CreateUser(true);">เพิ่มเจ้าหน้าที่</a>
     <table style="margin-left: 40%;">
         <tr>
