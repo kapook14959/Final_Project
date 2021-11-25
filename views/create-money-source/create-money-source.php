@@ -8,6 +8,7 @@ if (empty($_SESSION['username'])) {
     <h1 style="margin-left:10%;">สร้างข้อมูลแหล่งเงิน</h1>
     <form action="../../assets/db/insertmoney-source.php" method="post">
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
+        <label>ชื่อแหล่งเงิน</label>
             <input type="text" class="form-control" name="sourcename" placeholder="กรอกแหล่งเงิน">
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
