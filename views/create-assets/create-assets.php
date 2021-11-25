@@ -10,7 +10,7 @@ if (empty($_SESSION['username'])) {
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">
                 <label>เลขครุภัณฑ์</label>
-                <input type="text" name="id" class="form-control" placeholder="เลขครุภัณฑ์">
+                <input type="text" name="assets_number" class="form-control" placeholder="เลขครุภัณฑ์">
             </div>
             <div class="col-md-6">
                 <label>ปีงบประมาณ</label>
@@ -30,7 +30,7 @@ if (empty($_SESSION['username'])) {
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">
                 <label>วันที่เข้ารับ</label>
-                <input type="date" name="date_admit" class="form-control" placeholder="วันที่เข้ารับ">
+                <input type="date" name="date_admit" id="startdate" class="form-control" placeholder="dd-mm-yyyy">
             </div>
             <div class="col-md-6">
                 <label>มูลค่าครุภัณฑ์</label>

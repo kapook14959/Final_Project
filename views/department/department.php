@@ -12,6 +12,7 @@ if (empty($_SESSION['username'])) {
             <th>ลำดับ</th>
             <th>ชื่อ</th>
             <th>แก้ไข</th>
+            <th>ลบ</th>
         </tr>
         <?php
         include '../../assets/db/department.php';

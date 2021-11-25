@@ -60,19 +60,13 @@ if (isset($_GET['id'])) {
                 <label>สิทธิ์การใช้งาน</label>
                 <select class="form-select" name="permission">
                     <?php
-                    $option = array("staff", "admin", "ceo");
+                    $option = array("staff", "ceo");
                     if ($data['permission'] == $option[0]) {
                         echo "<option value='" . $data['permission'] . "' selected> เจ้าหน้าที่ </option>";
-                        echo "<option value='" . $option[1] . "' > ผู้ดูแลระบบ </option>";
-                        echo "<option value='" . $option[2] . "' > ผู้บริหาร </option>";
+                        echo "<option value='" . $option[1] . "' > ผู้บริหาร </option>";
                     } else if ($data['permission'] == $option[1]) {
-                        echo "<option value='" . $data['permission'] . "' selected> ผู้ดูแลระบบ </option>";
-                        echo "<option value='" . $option[0] . "' > เจ้าหน้าที่ </option>";
-                        echo "<option value='" . $option[2] . "' > ผู้บริหาร </option>";
-                    } else if ($data['permission'] == $option[2]) {
                         echo "<option value='" . $data['permission'] . "' selected> ผู้บริหาร </option>";
                         echo "<option value='" . $option[0] . "' > เจ้าหน้าที่ </option>";
-                        echo "<option value='" . $option[1] . "' > ผู้ดูแลระบบ </option>";
                     }
                     ?>
                 </select>

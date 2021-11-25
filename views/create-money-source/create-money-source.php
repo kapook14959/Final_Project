@@ -11,8 +11,8 @@ if (empty($_SESSION['username'])) {
             <input type="text" class="form-control" name="sourcename" placeholder="กรอกแหล่งเงิน">
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
-            <div class="col">
-                <input type="submit" class="btn btn-success" name="submit">
+            <div class="col" style="text-align: right;">
+            <input type="submit" value="บันทึก" name="submit" class="btn btn-success">
             </div>
             <div class="col">
                 <a class="btn btn-danger" onclick="GoBack(true)"> <span>กลับ</span> </a>

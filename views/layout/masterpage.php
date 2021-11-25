@@ -9,8 +9,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../../assets/css/style.css">
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="../../assets/js/function.js"></script>
@@ -33,9 +31,9 @@ session_start();
                         <div onmouseover="ShowSubmenu(true)" onmouseout="HideSubmenu(true)"><a><i class="bi bi-info"></i> จัดการข้อมูลทั่วไป</a> 
                             <ul class="sub-menu" id="hide">
                                 <li><a href="../unit/unit.php"><i class="bi bi-circle"></i> จัดการข้อมูลหน่วยนับ</a></li>
-                                <li><a href="../department/department.php"><i class="bi bi-circle"></i> จัดการภาควิชา</a></li>
-                                <li><a href="../money-source/money-source.php"><i class="bi bi-circle"></i> จัดการแหล่งเงิน</a></li>
-                                <li><a href="../assets-types/assets-types.php"><i class="bi bi-circle"></i> จัดการประเภทครุภัณฑ์</a></li> 
+                                <li><a href="../department/department.php"><i class="bi bi-circle"></i> จัดการข้อมูลหน่วยงาน</a></li>
+                                <li><a href="../money-source/money-source.php"><i class="bi bi-circle"></i> จัดการข้อมูลแหล่งเงิน</a></li>
+                                <li><a href="../assets-types/assets-types.php"><i class="bi bi-circle"></i> จัดการข้อมูลประเภทครุภัณฑ์</a></li> 
                             </ul>
                         </div>
                     </li>

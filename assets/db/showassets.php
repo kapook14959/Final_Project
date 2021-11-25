@@ -14,7 +14,7 @@ WHERE `asset_name` LIKE '%{$_POST["search"]}%'";
         if (mysqli_num_rows($result) > 0) {
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
+                echo "<td>" . $row['assets_number'] . "</td>";
                 echo "<td>" . $row['department_name'] . "</td>";
                 // echo "<td>" . $row['money_source_name'] . "</td>";
                 echo "<td>" . $row['year_of_budget'] . "</td>";
@@ -71,7 +71,7 @@ if ($result = mysqli_query($conn, $sql)) {
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_array($result)) {
             echo "<tr>";
-            echo "<td>" . $row['id'] . "</td>";
+            echo "<td>" . $row['assets_number'] . "</td>";
             echo "<td>" . $row['department_name'] . "</td>";
             // echo "<td>" . $row['money_source_name'] . "</td>";
             echo "<td>" . $row['year_of_budget'] . "</td>";

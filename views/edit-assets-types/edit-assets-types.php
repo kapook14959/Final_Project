@@ -18,10 +18,11 @@ if (isset($_GET['id'])) {
     <form action="../../assets/db/updateassets-types.php" method="post">
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <input type="hidden" name="id" value="<?php echo $data['id']; ?>">
+            <label>ชื่อประเภทครุภัณฑ์</label>
             <input type="text" class="form-control" name="typesname" placeholder="กรอกประเภทครุภัณฑ์" value="<?php echo $data['assets_types_name']; ?>">
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
-            <div class="col">
+            <div class="col" style="text-align: right;">
                 <input type="submit" class="btn btn-success" name="submit">
             </div>
             <div class="col">

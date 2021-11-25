@@ -44,35 +44,16 @@ if (isset($_GET['id'])) {
         array_push($assetstype_name, ['id' => $type['id'], 'assets_types_name' => $type['assets_types_name']]);
     }
 }
-function DateThai($strDate)
-{
-$strYear = date("Y",strtotime($strDate))+543;
-
-$strMonth= date("n",strtotime($strDate));
-
-$strDay= date("j",strtotime($strDate));
-
-$strHour= date("H",strtotime($strDate));
-
-$strMinute= date("i",strtotime($strDate));
-
-$strSeconds= date("s",strtotime($strDate));
-
-$strMonthCut = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
-
-$strMonthThai=$strMonthCut[$strMonth];
-
-return "$strDay $strMonthThai $strYear";
-
-}
 ?>
+<script src="../../assets/js/jquery.datetimepicker.full.js"></script>
 <div class="container-fluid">
     <h1 style="margin-left:10%;">แก้ไขข้อมูลครุภัณฑ์</h1>
     <form action="../../assets/db/updateassets.php" method="post" enctype="multipart/form-data">
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">
+            <input type="hidden" name="id" class="form-control" placeholder="เลขครุภัณฑ์" value="<?php echo $data['id']; ?>" readonly>
                 <label>เลขครุภัณฑ์</label>
-                <input type="text" name="id" class="form-control" placeholder="เลขครุภัณฑ์" value="<?php echo $data['id']; ?>" readonly>
+                <input type="text" name="assets_number" class="form-control" placeholder="เลขครุภัณฑ์" value="<?php echo $data['assets_number']; ?>" readonly>
             </div>
             <div class="col-md-6">
                 <label>ปีงบประมาณ</label>

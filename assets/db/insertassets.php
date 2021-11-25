@@ -4,7 +4,7 @@ include '../../assets/db/connect.php';
 $conn =  $_SESSION['conn'];
 
 if(isset($_POST['submit'])){
-    $id = $_POST['id'];
+    $assets_number = $_POST['assets_number'];
     $year_of_budget = $_POST['year_of_budget'];
     $name = $_POST['name'];
     $detail = $_POST['detail'];
@@ -55,8 +55,8 @@ if(isset($_POST['submit'])){
     }
   }
 }
-$sql = "INSERT INTO `assets`(`id`, `asset_name`, `detail`, `year_of_budget`, `value_asset`, `seller_name`, `status`, `number_delivery`, `serial_number`, `date_admit`, `expiration_date`, `assets_types_id`, `unit_id`, `department_id`, `money_source_id`,`image`) 
-VALUES ('$id','$name','$detail','$year_of_budget','$value_assets','$seller','$status','$delivery_number','$serial_number','$date_admit','$expiration_date','$assets_types_id','$unit_id','$department_id','$money_source_id','$image')";
+$sql = "INSERT INTO `assets`(`assets_number`, `asset_name`, `detail`, `year_of_budget`, `value_asset`, `seller_name`, `status`, `number_delivery`, `serial_number`, `date_admit`, `expiration_date`, `assets_types_id`, `unit_id`, `department_id`, `money_source_id`,`image`) 
+VALUES ('$assets_number','$name','$detail','$year_of_budget','$value_assets','$seller','$status','$delivery_number','$serial_number','$date_admit','$expiration_date','$assets_types_id','$unit_id','$department_id','$money_source_id','$image')";
 if (mysqli_query($conn, $sql)) {
     echo "New record created successfully";
   }

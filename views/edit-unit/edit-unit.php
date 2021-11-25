@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
             <input type="text" class="form-control" name="unitname" placeholder="กรอกหน่วยนับ" value="<?php echo $data['unit_name']; ?>">
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
-            <div class="col">
+            <div class="col" style="text-align: right;">
                 <input type="submit" class="btn btn-success" name="submit">
             </div>
             <div class="col">

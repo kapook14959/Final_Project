@@ -10,5 +10,6 @@ while($row = mysqli_fetch_assoc($res)){
     echo "<td>".$row['id']."</td>";
     echo "<td>".$row['department_name']."</td>";
     echo "<td><a class='btn' href='../../views/edit-department/edit-department.php?id=" . $row['id'] . "'> <i class='bi bi-pencil-square'></i></a>" . "</td>";
+    echo "<td><a class='btn' href='../../assets/db/del-department.php?id=" . $row['id'] . "'> <i class='bi bi-trash'></i></a>" . "</td>";
     echo "</tr>";
 }

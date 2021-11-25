@@ -229,3 +229,6 @@ th {
   left: 5%;
   border-radius: 5px 10px;
 }
+.right{
+  align-self: end;
+}

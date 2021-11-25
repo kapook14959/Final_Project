@@ -43,7 +43,6 @@ if (empty($_SESSION['username'])) {
                 <select class="form-select" name="permission">
                     <option selected>เลือก Role </option>
                     <option value="staff">เจ้าหน้าที่</option>
-                    <option value="admin">ผู้ดูแลระบบ</option>
                     <option value="ceo">ผู้บริหาร</option>
                 </select>
             </div>

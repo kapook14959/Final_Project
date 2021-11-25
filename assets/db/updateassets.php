@@ -5,6 +5,7 @@ $conn =  $_SESSION['conn'];
 
 if(isset($_POST['submit'])){
   $id = $_POST['id'];
+  $assets_number = $_POST['assets_number'];
   $year_of_budget = $_POST['year_of_budget'];
   $name = $_POST['name'];
   $detail = $_POST['detail'];
@@ -45,13 +46,13 @@ if(isset($_POST['submit'])){
   }
   if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded. <br>";
-    $sql = "UPDATE `assets` SET `id`='$id',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id'  WHERE `id` = '$id'";
+    $sql = "UPDATE `assets` SET `assets_number`='$assets_number',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id'  WHERE `id` = '$id'";
   } 
   else {
     if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
       $image = $target_file;
       echo "The file ". htmlspecialchars( basename( $_FILES["image"]["name"])). " has been uploaded.";
-      $sql = "UPDATE `assets` SET `id`='$id',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id',`image` ='$image'  WHERE `id` = '$id'";
+      $sql = "UPDATE `assets` SET `assets_number`='$assets_number',`asset_name`='$name',`detail`='$detail',`year_of_budget`='$year_of_budget',`value_asset`='$value_assets',`seller_name`='$seller',`status`='$status',`number_delivery`='$delivery_number',`serial_number`='$serial_number',`date_admit`='$date_admit',`expiration_date`='$expiration_date',`assets_types_id`='$assets_types_id',`unit_id`='$unit_id',`department_id`='$department_id',`money_source_id`='$money_source_id',`image` ='$image'  WHERE `id` = '$id'";
     } 
     else {
       echo "Sorry, there was an error uploading your file.";
