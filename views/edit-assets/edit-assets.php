@@ -163,8 +163,8 @@ return "$strDay $strMonthThai $strYear";
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="exampleFormControlFile1">รูปภาพ</label>
-                    <img src="<?php echo $data['image'] ?>" width="50px" height="auto" alt="" srcset="">
-                    <input type="file" class="form-control-file" name="image">
+                    <img src="<?php echo $data['image'] ?>" width="50px" height="auto" alt="" srcset="" id="preview">
+                    <input type="file" class="form-control-file" name="image" onchange="readURL(this);">
                 </div>
             </div>
         </div>
