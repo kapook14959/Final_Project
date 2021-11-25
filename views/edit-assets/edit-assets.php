@@ -98,7 +98,6 @@ return "$strDay $strMonthThai $strYear";
                 <input type="text" name="value_assets" class="form-control" placeholder="มูลค่าครุภัณฑ์" value="<?php echo $data['value_asset']; ?>">
             </div>
         </div>
-<<<<<<< HEAD
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">
                 <label>เลขที่ใบส่งของ</label>
@@ -107,13 +106,6 @@ return "$strDay $strMonthThai $strYear";
             <div class="col-md-6">
                 <label>ผู้ขาย</label>
                 <input type="text" name="seller" class="form-control" placeholder="ผู้ขาย" value="<?php echo $data['seller_name']; ?>">
-=======
-        <div class="col-md-6">
-            <div class="form-group">
-                <label for="exampleFormControlFile1">รูปภาพ</label>
-                <img src="<?php echo $data['image']?>" width="50px" height="auto" alt="" srcset="" id="preview">
-                <input type="file" class="form-control-file" name="image" onchange="readURL(this);">
->>>>>>> b00263d9f70dff7b58c5f41968a151e9369fcfbe
             </div>
         </div>
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
@@ -170,8 +162,8 @@ return "$strDay $strMonthThai $strYear";
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="exampleFormControlFile1">รูปภาพ</label>
-                    <img src="<?php echo $data['image'] ?>" width="50px" height="auto" alt="" srcset="">
-                    <input type="file" class="form-control-file" name="image">
+                    <img src="<?php echo $data['image'] ?>" width="50px" height="auto" alt="" srcset="" id="preview">
+                    <input type="file" class="form-control-file" name="image" onchange="readURL(this);">
                 </div>
             </div>
         </div>
