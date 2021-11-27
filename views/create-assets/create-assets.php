@@ -10,7 +10,7 @@ if (empty($_SESSION['username'])) {
         <div class="row" style="margin: 10px 0 10px 39rem; width:50%;">
             <div class="col-md-6">
                 <label>เลขครุภัณฑ์</label>
-                <input type="text" name="assets_number" class="form-control" placeholder="เลขครุภัณฑ์">
+                <input type="text" name="assets_number" class="form-control" pattern="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]" placeholder="เลขครุภัณฑ์">
             </div>
             <div class="col-md-6">
                 <label>ปีงบประมาณ</label>

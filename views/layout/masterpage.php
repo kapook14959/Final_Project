@@ -18,12 +18,12 @@ session_start();
 <body>
     <div class="wrapper">
         <div class="sidebar">
-            <a href="../layout/masterpage.php"><img src="../../assets/images/logo-footer.png" alt="logo"></a>
+            <a href="../dashboard/dashboard.php"><img src="../../assets/images/logo-footer.png" alt="logo"></a>
             <ul>
-                <li><a href="#"><i class="bi bi-graph-up"></i> รายงานครุภัณฑ์</a></li>
-                <li><a href="#"><i class="bi bi-arrow-left-right"></i> ยืม - คืน ครุภัณฑ์</a></li>
-                <li><a href="#"><i class="bi bi-cart3"></i> จำหน่ายครุภัณฑ์</a></li>
-                <li><a href="#"><i class="bi bi-gear"></i> แจ้งซ่อมครุภัณฑ์</a></li>
+                <li><a href="../dashboard/dashboard.php"><i class="bi bi-graph-up"></i> รายงานครุภัณฑ์</a></li>
+                <li><a href="../borrow-and-return/borrow-and-return.php"><i class="bi bi-arrow-left-right"></i> ยืม - คืน ครุภัณฑ์</a></li>
+                <li><a href="../sells-assets/sells-assets.php"><i class="bi bi-cart3"></i> จำหน่ายครุภัณฑ์</a></li>
+                <li><a href="../repair-notice/repair-notice.php"><i class="bi bi-gear"></i> แจ้งซ่อมครุภัณฑ์</a></li>
                 <?php
                 if( $_SESSION['status'] == "admin"){
                     echo '<li><a href="../detail-assets/detail-assets.php"><i class="bi bi-tv"></i> จัดการครุภัณฑ์</a></li>
